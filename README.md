@@ -93,3 +93,72 @@ npm install -D parcel
 
 https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json 참고!
 
+
+### react 기본 설정
+
+
+```bash
+touch index.html
+touch src/main.tsx
+```
+기본폴더에 'index.html'파일과 src폴더를 만들어 'main.tsx'파일을 만든다.
+
+```bash
+//index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="./src/main.tsx"></script>
+</body>
+</html>
+```
+
+
+
+```bash
+//main.tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+function App() {
+ return(
+  <div>
+   hello world!
+  </div>
+ )
+}
+
+function main() {
+  const element = document.getElementById('root');
+
+  if (!element) {
+    return;
+  }
+
+  const root = ReactDOM.createRoot(element);
+
+  root.render((<App />));
+}
+
+main();
+```
+
+'index.html'에 src폴더의 'main.tsx'파일을 스크립트로 연결한다.
+
+
+이렇게하고 npm실행을 하면?
+
+```bash
+npm start
+```
+
+"alias": {
+    "process": false
+  },
