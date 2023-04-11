@@ -6,7 +6,6 @@
 
 작성 중 문제가 생길시 sudo를 활용하자
 
-
 ### Node.js 설치하기
 
 폴더를 하나 만들고 VScode로 폴더열기
@@ -31,7 +30,6 @@ touch .gitignore
 
 .gitignore파일에 /node_modules/, /dist/, /.parcel-cache/ 작성하기
 
-
 ### Typescript 설치하기
 
 ```bash
@@ -41,9 +39,7 @@ npx tsc --init
 
 'tsconfig.json' 파일의 jsx속성을 변경한다 ("jsx": "react-jsx")
 
-
 ### ESlint 설정
-
 
 ```bash
 npm install -D eslint
@@ -58,7 +54,6 @@ touch .eslintignore
 ```
 
 '.eslintignore' 파일에 /node_modules/, /dist/, /.parcel-cache/ 작성하기
-
 
 ### REACT 설치
 
@@ -83,7 +78,7 @@ touch jest.config.js
 
 https://github.com/ahastudio/CodingLife/blob/main/20220726/react/jest.config.js 의 내용을 파일에 작성
 
-### Parcel설치 
+### Parcel설치
 
 ```bash
 npm install -D parcel
@@ -93,14 +88,13 @@ npm install -D parcel
 
 https://github.com/ahastudio/CodingLife/blob/main/20220726/react/package.json 참고!
 
-
 ### react 기본 설정
-
 
 ```bash
 touch index.html
 touch src/main.tsx
 ```
+
 기본폴더에 'index.html'파일과 src폴더를 만들어 'main.tsx'파일을 만든다.
 
 ```bash
@@ -119,8 +113,6 @@ touch src/main.tsx
 </body>
 </html>
 ```
-
-
 
 ```bash
 //main.tsx
@@ -152,13 +144,24 @@ main();
 
 'index.html'에 src폴더의 'main.tsx'파일을 스크립트로 연결한다.
 
-
 이렇게하고 npm실행을 하면?
 
 ```bash
 npm start
 ```
 
+@parcel/core: Failed to resolve 'process' from './node_modules/react-error-overlay/lib/index.js'
+이런식의 오류가 뜬다.
+
+해결법! 아래의 코드를 추가하자!
+
+```bash
+//package.json
+
+
 "alias": {
     "process": false
   },
+```
+
+package.json의 script아래에 아래의 코드를 추가하면 해결된다.
